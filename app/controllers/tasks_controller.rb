@@ -8,14 +8,17 @@ class TasksController < ApplicationController
   end
 
   def new
-  @task = Task.new    
+  @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
-    
-    @task.save
-    redirect_to @task
+    if @task.description.blank?
+      redirect_to new_task_path, alert: "Description cannot be blank!"
+    else
+      @task.save
+      redirect_to @task, alert: "Task added!"
+    end
   end
 
 private
