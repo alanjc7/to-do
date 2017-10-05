@@ -21,6 +21,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.update(params[:complete])
+    @task.save
+  end
+
 private
 
 def task_params

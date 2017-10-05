@@ -1,7 +1,7 @@
 <h1>My to do list</h1>
 <p><%= link_to "Create a task", new_task_path, class: 'button'%></p>
 
-<table>
+<table class="table">
   <tr>
     <th>Task</th>
     <th>Complete?</th>
@@ -11,7 +11,7 @@
     <tr>
       <td><%= task.description %></td>
       <td><%= task.complete %></td>
-      <td><%= link_to 'Show', task_path(task) %></td>
+      <td><%= link_to 'View', task_path(task) %></td>
     </tr>
   <% end %>
 </table>
