@@ -13,11 +13,10 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    if @task.description.blank?
-      redirect_to new_task_path, alert: "Description cannot be blank!"
-    else
-      @task.save
+    if @task.save
       redirect_to @task, alert: "Task added!"
+    else
+      redirect_to new_task_path, alert: "Description cannot be blank!"
     end
   end
 
