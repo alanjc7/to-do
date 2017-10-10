@@ -1,7 +1,13 @@
-<p>
-  <strong>Task</strong>
-</p>
-<p> <%= @task.description %> <%= @task.complete %></p>
-
+<table class="table">
+  <tr>
+    <th>Task</th>
+    <th>Complete?</th>
+  </tr>
+  <tr>
+      <td><%= @task.description %></td>
+      <td><%= @task.complete %></td>
+      <td><%= link_to 'Edit (dead link)', task_path(@task) %></td>
+  </tr>
+</table>
 
 <p><%= link_to "Back", tasks_path, class: 'button'%></p>
