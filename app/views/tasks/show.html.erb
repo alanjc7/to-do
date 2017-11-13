@@ -6,7 +6,7 @@
   <tr>
       <td><%= @task.description %></td>
       <td><%= @task.complete %></td>
-      <td><%= link_to 'Edit (dead link)', task_path(@task) %></td>
+      <td><%= link_to 'Edit', edit_task_path(@task) %></td>
   </tr>
 </table>
 
